@@ -1,0 +1,62 @@
+---
+title: "HW9"
+subtitle: "Section 9.3.1, Chapter 13"
+author: "Your Name Here"
+output: pdf_document
+---
+
+The code below just loads some packages and makes it so that enough digits are printed that you won't get confused by rounding errors.
+
+```{r, message = FALSE}
+library(dplyr) # functions like summarize
+library(ggplot2) # for making plots
+library(readr)
+
+options("pillar.sigfig" = 10) # print 10 significant digits in summarize output
+```
+
+## Problem 1: 
+
+Researchers drove a compact car at a variety of speeds from 35 to 75 miles per hour, and measured the fuel efficiency in miles per gallon at each speed.
+
+```{r}
+efficiency <- read_csv("http://www.evanlray.com/data/sdm4/Slower_is_cheaper.csv")
+names(efficiency) <- c("mpg", "speed")
+head(efficiency)
+```
+
+#### (a) Make a plot of the data with `mpg` as the response variable and `speed` as the explanatory variable.
+
+```{r}
+
+```
+
+#### (b) Fit a quadratic regression model for miles per gallon as a function of speed.
+
+```{r}
+
+```
+
+#### (c) Find a set of 3 Bonferroni-adjusted confidence intervals with familywise confidence level of 95% for the mean miles per gallon in the "population" of trips taken by this car where it travels 40 miles per hour, 50 miles per hour, or 60 miles per hour.  Interpret your intervals in context.
+
+```{r}
+
+```
+
+## Problem 2: Sleuth3 Exercise 13.19
+
+Quote from the book:
+
+> A 1989 study investigated the effect of heredity and environment on intelligence. From adoption registers in France, researchers selected samples of adopted children whose biological parents and adoptive parents came from either the very highest or the very lowest socio-economic status (SES) categories (based on years of education and occupation). They attempted to obtain samples of size 10 from each combination: (1) high adoptive SES and high biological SES, (2) high adoptive SES and low biological SES, (3) low adoptive SES and high biological SES, and (4) low SES for both parents. It turned out, however, only eight children belonged to combination three. The 38 selected children were given intelligence quotient (IQ) tests. The scores are [loaded in the R code below]. (Data from C. Capron and M. Duyme, "Children's IQs and SES of Biological and Adoptive Parents in a Balanced Cross-fostering Study," *European Bulletin of Cognitive Psychology* 11 (2) (1991): 323-48.) Does the difference in mean scores for those with high an low SES biological parents depend on whether the adoptive parents were high or low SES? If not, how much is the mean IQ score affected by the SES of adoptive prents, and how much is it affected by the SES of the biological parents? Is one of these effects larger than the other? Analyze the data and write a report of the findings.
+
+Here are some things I'll be looking for:
+
+ * Create an appropriate plot of the data
+ * Conduct the analyses suggested by the book above.  Each of the questions posed should be answered with a specific confidence interval or hypothesis test for one or more model parameters, with a corresponding interpretation in context.
+ * Address the scope of inference for this data analysis.  Although the book used the word "effect" in framing the questions to answer, is it possible to draw conclusions about cause and effect in this example?
+
+```{r}
+nature_nurture <- read_csv("http://www.evanlray.com/data/sleuth3/ex1319_nature_nurture.csv")
+```
+
+
